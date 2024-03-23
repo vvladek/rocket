@@ -1,0 +1,88 @@
+.rocket {
+    width: var(--rocket-width);
+    height: var(--rocket-height);
+    position: fixed;
+    top: calc(50% - var(--rocket-height) / 2);
+    left: calc(50% - var(--rocket-width) / 2);
+}
+
+.rocket div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 1s ease-in-out;
+}
+
+.first__stage__flame__left::after,
+.first__stage__flame__right::after,
+.second__stage__flame::after,
+.third__stage__flame::after {
+    content: "";
+    width: calc(var(--rocket-width) / 4);
+    height: calc(var(--rocket-height) / 2);
+    background: linear-gradient(yellow, orange, transparent);
+    filter: blur(5px);
+    position: absolute;
+    animation: flame 0.05s linear infinite;
+}
+
+.rocket__emergency__stage {
+    background: url(/webp/emergency-stage.webp) no-repeat center;
+    background-size: contain;
+    transform: translate(-35vw, calc(var(--rocket-height) / -2)) rotate(360deg);
+}
+
+.rocket__head {
+    background: url(/webp/head-stage.webp) no-repeat center;
+    background-size: contain;
+    transform: translate(-35vw, calc(var(--rocket-height) / -3)) rotate(360deg);
+}
+
+.rocket__third__stage {
+    background: url(/webp/third-stage.webp) no-repeat center;
+    background-size: contain;
+    transform: translate(-35vw, calc(var(--rocket-height) / -6)) rotate(360deg);
+}
+
+.rocket__second__stage {
+    background: url(/webp/second-stage.webp) no-repeat center;
+    background-size: contain;
+    transform: translate(-35vw, 0) rotate(360deg);
+}
+
+.rocket__first__stage__left {
+    background: url(/webp/first-stage-left.webp) no-repeat center;
+    background-size: contain;
+    transform: translate(-35vw, calc(var(--rocket-height) / 2)) rotate(360deg);
+}
+
+.rocket__first__stage__right {
+    background: url(/webp/first-stage-right.webp) no-repeat center;
+    background-size: contain;
+    transform: translate(-35vw, calc(var(--rocket-height) / 2)) rotate(360deg);
+}
+
+.first__stage__flame__left::after {
+    top: calc(50% + var(--rocket-height) / 2);
+    left: calc(var(--rocket-width) / 7);
+}
+
+.first__stage__flame__right::after {
+    top: calc(50% + var(--rocket-height) / 2);
+    right: calc(var(--rocket-width) / 7);
+}
+
+.second__stage__flame::after {
+    top: calc(50% + var(--rocket-height) / 2);
+    left: calc(50% - var(--rocket-width) / 8);
+}
+
+.third__stage__flame::after {
+    top: 45%;
+    left: calc(50% - var(--rocket-width) / 8); 
+}
+
+@keyframes flame {
+    0% { translate: 1px 3px; }
+    100% { translate: 0px 0px; }
+}
