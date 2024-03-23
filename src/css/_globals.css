@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.rocket {
+    width: 50px;
+    height: 305px;
+    background-image: url(/webp/first-stage-left.webp),
+                      url(/webp/first-stage-right.webp),
+                      url(/webp/second-stage.webp),
+                      url(/webp/third-stage.webp),
+                      url(/webp/head-stage.webp),
+                      url(/webp/emergency-stage.webp)
+    ;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fire::after {
+    content: "";
+    width: 20px;
+    height: 150px;
+    background: linear-gradient(yellow, transparent);
+    position: absolute;
+    top: calc(50% + 155px);
+    z-index: -1;
+    left: calc(50% - 10px);
+    filter: blur(5px);
+    animation: fire 0.05s linear infinite;
+}
+
+@keyframes fire {
+    0% { translate: 1px 3px; }
+    100% { translate: 0px 0px; }
+}
