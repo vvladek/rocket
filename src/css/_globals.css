@@ -1,6 +1,16 @@
 :root {
     --rocket-width: 50px;
-    --rocket-height: 305px;
+    --rocket-height: 350px;
+    --rocket-aspect-ratio: 7;
+    --rh: calc(var(--rocket-height) / var(--rocket-aspect-ratio));
+    --emergency-stage-height: calc(var(--rh) / 2);
+    --head-stage-height: calc(var(--rh) * 1.5);
+    --third-stage-height: calc(var(--rh) * 1);
+    --second-stage-height: calc(var(--rh) * 4);
+    --first-stage-height: calc(var(--rh) * 2.5);
+    --first-stage-width: calc(var(--rocket-width) / 2);
+    --flame-width: calc(var(--rocket-width) / 3);
+    --flame-height: calc(var(--rocket-height) / 2);
 }
 
 * {
