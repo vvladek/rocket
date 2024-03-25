@@ -21,3 +21,17 @@
 body {
     background: black;
 }
+
+.start__countdown {
+    display: none;
+}
+
+.show__start__countdown {
+    display: block;
+    animation: gg 1s linear 1;
+}
+
+@keyframes gg {
+    from { scale: 0; }
+    to { scale: 1; }
+}
