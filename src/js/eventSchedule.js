@@ -27,7 +27,7 @@ const eventSchedule = [
     },
     {
         name: "start-countdown",
-        timeout: 10000
+        timeout: 11000
     },
     {
         name: "lift-off",

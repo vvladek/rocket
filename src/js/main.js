@@ -42,13 +42,14 @@ window.addEventListener("click", (event) => {
     else if (event.target.classList.contains("emergency__stage")) {
         if (state.currentEvent.name === "prepare-emergency-stage") {
             DOM.prepareStageForLaunch(event.target)
-            DOM.showStartCountDownButton()
+            DOM.showLauncher()
             state.finishEvent()
         }
     }
     else if (event.target.classList.contains("start__countdown")) {
         if (state.currentEvent.name === "start-countdown") {
-            DOM.go()
+            DOM.startCountdown()
+            state.finishEvent()
         }
     }
 })

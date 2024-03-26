@@ -7,7 +7,7 @@
     --head-stage-height: calc(var(--rh) * 1.5);
     --third-stage-height: calc(var(--rh) * 1);
     --second-stage-height: calc(var(--rh) * 4);
-    --first-stage-height: calc(var(--rh) * 2.5);
+    --first-stage-height: calc(var(--rh) * 2.75);
     --first-stage-width: calc(var(--rocket-width) / 2);
     --flame-width: calc(var(--rocket-width) / 3);
     --flame-height: calc(var(--rocket-height) / 2);
@@ -16,22 +16,9 @@
 * {
     margin: 0;
     padding: 0;
+    transition: all 1s ease-in-out;
 }
 
 body {
     background: black;
-}
-
-.start__countdown {
-    display: none;
-}
-
-.show__start__countdown {
-    display: block;
-    animation: gg 1s linear 1;
-}
-
-@keyframes gg {
-    from { scale: 0; }
-    to { scale: 1; }
 }

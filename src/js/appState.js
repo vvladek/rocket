@@ -5,8 +5,8 @@ export class AppState {
     constructor (schedule) {
         this.schedule = schedule
         this.isPossibleClick = true
-        this.pointer = 0
-        this.currentEvent = this.schedule[0]
+        this.pointer = 5
+        this.currentEvent = this.schedule[5]
     }
 
     finishEvent () {
