@@ -1,0 +1,32 @@
+.scene {
+    width: 900vw;
+    height: 400vh;
+    background-color: white;
+    transform: translateY(-400vh);
+    transition: all 10s linear;
+    transition-delay: 2s;
+}
+
+.black {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.blue {
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+}
+
+.green {
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+}
+
+.red {
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+}

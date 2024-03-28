@@ -2,59 +2,64 @@
     width: var(--rocket-width);
     height: var(--rocket-height);
     position: fixed;
+    z-index: 100;
     top: calc(50% - var(--rocket-height) / 2);
     left: calc(50% - var(--rocket-width) / 2);
 }
 
-.emergency__stage {
+.s4 {
     height: var(--emergency-stage-height);
     background: url(/webp/emergency-stage.webp) no-repeat center;
     background-size: 100%;
-    transform: translate(-35vw, calc(var(--rocket-height) / -2)) rotate(-460deg);
+    transform: translate(15vw, -10vh) rotate(460deg);
 }
 
 .head {
     height: var(--head-stage-height);
     background: url(/webp/head-stage.webp) no-repeat center;
     background-size: 100%;
-    /* transform: translate(-35vw, calc(var(--rocket-height) / -3)) rotate(-340deg); */
+    transform: translate(-15vw, -10vh) rotate(-340deg);
 }
 
-.third__stage {
+.s3 {
     height: var(--third-stage-height);
     background: url(/webp/third-stage.webp) no-repeat center;
     background-size: 100%;
     position: relative;
-    /* transform: translate(-35vw, calc(var(--rocket-height) / -6)) rotate(-370deg); */
+    transform: translate(-15vw) rotate(-370deg);
 }
 
-.second__stage {
+.s2 {
     height: var(--second-stage-height);
     background: url(/webp/second-stage.webp) no-repeat center;
     background-size: 100%;
     position: relative;
-    /* transform: translate(-35vw, 0) rotate(-400deg); */
+    transform: translate(15vw, -15vh) rotate(380deg);
 }
 
-.first__stage__left, .first__stage__right {
+.s1-l, .s1-r {
     height: var(--first-stage-height);
     width: var(--first-stage-width);
     position: absolute;
     bottom: 0;
 }
 
-.first__stage__left {
+.s1-l {
     background: url(/webp/first-stage-left.webp) no-repeat center;
     background-size: 100%;
     left: 0;
-    /* transform: translate(-35vw, calc(var(--rocket-height) / 2)) rotate(-340deg); */
+    transform: translate(-15vw, 10vh) rotate(-160deg);
 }
 
-.first__stage__right {
+.s1-r {
     background: url(/webp/first-stage-right.webp) no-repeat center;
     background-size: 100%;
     right: 0;
-    /* transform: translate(-33vw, calc(var(--rocket-height) / 2)) rotate(-550deg); */
+    transform: translate(15vw, 10vh) rotate(140deg);
+}
+
+.prepared {
+    transform: none;
 }
 
 .flame::after {

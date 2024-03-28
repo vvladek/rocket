@@ -1,55 +1,31 @@
-import { AppState } from "./appState"
-import { eventSchedule } from "./eventSchedule"
 import { DOMController } from "./DOMController"
 
 
-const state = new AppState(eventSchedule)
+let pointer = 0, isPossibleClick = true
+const clickOrder = [ "s2", "s1-l", "s1-r", "s3", "head", "s4", "start", "s4", "s1-l", "s1-r", "s2", "s3" ]
 const DOM = new DOMController()
 
 
 window.addEventListener("click", (event) => {
-    if (!state.isPossibleClick) return
-    if (event.target.classList.contains("second__stage")) {
-        if (state.currentEvent.name === "prepare-second-stage") {
-            DOM.prepareStageForLaunch(event.target)
-            state.finishEvent()
-        }
+    if (!isPossibleClick || !event.target.classList.contains(clickOrder[pointer])) {
+        return
     }
-    else if (event.target.classList.contains("first__stage__left")) {
-        if (state.currentEvent.name === "prepare-first-stage-left") {
-            DOM.prepareStageForLaunch(event.target)
-            state.finishEvent()
-        }
+    else if (event.target.parentNode.classList.contains("rocket")) {
+        DOM.handleClickOnRocket(event.target)
+        setClickBlocking(1000)
     }
-    else if (event.target.classList.contains("first__stage__right")) {
-        if (state.currentEvent.name === "prepare-first-stage-right") {
-            DOM.prepareStageForLaunch(event.target)
-            state.finishEvent()
-        }
+    else if (event.target.classList.contains("start")) {
+        DOM.launchRocket()
+        setClickBlocking(10000)
     }
-    else if (event.target.classList.contains("third__stage")) {
-        if (state.currentEvent.name === "prepare-third-stage") {
-            DOM.prepareStageForLaunch(event.target)
-            state.finishEvent()
-        }
-    }
-    else if (event.target.classList.contains("head")) {
-        if (state.currentEvent.name === "prepare-head") {
-            DOM.prepareStageForLaunch(event.target)
-            state.finishEvent()
-        }
-    }
-    else if (event.target.classList.contains("emergency__stage")) {
-        if (state.currentEvent.name === "prepare-emergency-stage") {
-            DOM.prepareStageForLaunch(event.target)
-            DOM.showLauncher()
-            state.finishEvent()
-        }
-    }
-    else if (event.target.classList.contains("start__countdown")) {
-        if (state.currentEvent.name === "start-countdown") {
-            DOM.startCountdown()
-            state.finishEvent()
-        }
-    }
+    pointer += 1
 })
+
+
+function setClickBlocking (time) {
+    isPossibleClick = false
+    setTimeout(() => {
+        isPossibleClick = true
+    // }, time)
+    }, 100)
+}

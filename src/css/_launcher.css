@@ -1,24 +1,40 @@
 .launcher {
     display: grid;
-    gap: 5px;
-    width: 300px;
-    translate: calc(50vw - 150px) -100%;
+    place-content: center;
+    width: 400px;
     padding-top: 30px;
+    transition-delay: 1s;
+    position: fixed;
+    z-index: 100;
+    translate: calc(50vw - 200px) -100%;
 }
 
-.launcher button {
+.visible-launcher {
+    translate: calc(50vw - 200px);
+}
+
+.start {
+    width: 300px;
     height: 50px;
     font-size: 20px;
     font-weight: 900;
 }
 
-.launcher h1 {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 72px;
-    text-align: center;
+.hidden-button {
+    height: 0;
+    scale: 0;
+    animation: hide-button 1s linear 1;
 }
 
-.show {
-    translate: calc(50vw - 150px) 0;
+@keyframes hide-button {
+    0% { scale: 1; height: 50px; }
+    100% { scale: 0; height: 0; }
+}
+
+.launcher h1 {
+    color: yellow;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    text-align: center;
 }
