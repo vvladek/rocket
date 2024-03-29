@@ -62,6 +62,11 @@
     transform: none;
 }
 
+.horizontal-head {
+    transition-duration: 10s;
+    transform: translate(-10vw, calc(var(--rocket-height) / 3.5)) rotate(90deg);
+}
+
 .flame::after {
     content: "";
     width: var(--flame-width);

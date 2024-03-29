@@ -2,9 +2,8 @@
     width: 900vw;
     height: 400vh;
     background-color: white;
-    transform: translateY(-400vh);
+    transform: translateY(-500vh);
     transition: all 10s linear;
-    transition-delay: 2s;
 }
 
 .black {
