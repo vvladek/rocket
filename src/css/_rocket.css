@@ -3,8 +3,8 @@
     height: var(--rocket-height);
     position: fixed;
     z-index: 100;
-    top: calc(50% - var(--rocket-height) / 2);
-    left: calc(50% - var(--rocket-width) / 2);
+    top: calc(50vh - var(--rocket-height) / 2);
+    left: calc(50vw - var(--rocket-width) / 2);
 }
 
 .s4 {
