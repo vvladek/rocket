@@ -10,6 +10,45 @@
     </head>
     <body>
 
+        <div class="my__body">
+            
+            <div class="rocket">
+                <div class="s4"></div>
+                <div class="head"></div>
+                <div class="s3"></div>
+                <div class="s2"></div>
+                <div class="s1-l"></div>
+                <div class="s1-r"></div>
+            </div>
+    
+            <div class="launcher">
+                <button class="start">START COUNTDOWN</button>
+                <h1>10</h1>
+            </div>
+    
+            <div class="scene">
+                <div class="horizontal">
+                    <div class="sun"></div>
+                    <div class="mercury"></div>
+                    <div class="venus"></div>
+                    <div class="earth"></div>
+                    <div class="mars"></div>
+                    <div class="jupiter"></div>
+                    <div class="saturn"></div>
+                    <div class="uranus"></div>
+                    <div class="neptune"></div>
+                </div>
+                <div class="vertical">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
         <audio src="/audio/sw.mp3" class="sw" loop></audio>
         <script>
             const audio = document.querySelector(".sw")
@@ -22,42 +61,6 @@
         <audio src="/audio/s2-separated.mp3" preload="auto" class="s2__audio"></audio>
         <audio src="/audio/s3-separated.mp3" preload="auto" class="s3__audio"></audio>
         <audio src="/audio/s4-separated.mp3" preload="auto" class="s4__audio"></audio>
-
-        <div class="rocket">
-            <div class="s4"></div>
-            <div class="head"></div>
-            <div class="s3"></div>
-            <div class="s2"></div>
-            <div class="s1-l"></div>
-            <div class="s1-r"></div>
-        </div>
-
-        <div class="launcher">
-            <button class="start">START COUNTDOWN</button>
-            <h1>10</h1>
-        </div>
-
-        <div class="scene">
-            <div class="horizontal">
-                <div class="sun"></div>
-                <div class="mercury"></div>
-                <div class="venus"></div>
-                <div class="earth"></div>
-                <div class="mars"></div>
-                <div class="jupiter"></div>
-                <div class="saturn"></div>
-                <div class="uranus"></div>
-                <div class="neptune"></div>
-            </div>
-            <div class="vertical">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
         
         <script src="/src/js/main.js" type="module"></script>
     </body>
