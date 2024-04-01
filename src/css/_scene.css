@@ -1,31 +1,94 @@
 .scene {
+    display: grid;
     width: 900vw;
-    height: 400vh;
-    background-color: white;
+    height: 600vh;
+    background: linear-gradient(#000000, #4090c2);
     transform: translateY(-500vh);
     transition: all 10s linear;
 }
 
-.black {
+.vertical div {
     width: 100vw;
     height: 100vh;
-    background-color: black;
 }
 
-.blue {
-    width: 100vw;
-    height: 100vh;
-    background-color: blue;
+.vertical div:nth-child(5) {
+    background: url(/webp/surface.webp) no-repeat bottom;
+    background-size: cover;
 }
 
-.green {
-    width: 100vw;
-    height: 100vh;
-    background-color: green;
+.vertical div:nth-child(4) {
+    background: url(/webp/clouds-1.webp) no-repeat center;
+    background-size: contain;
 }
 
-.red {
+.vertical div:nth-child(3) {
+    background: url(/webp/clouds-2.webp) no-repeat center;
+    background-size: contain;
+}
+
+.vertical div:nth-child(2) {
+    background: url(/webp/clouds-3.webp) no-repeat center;
+    background-size: contain;
+}
+
+.vertical div:nth-child(1) {
+    background: url(/webp/clouds-4.webp) no-repeat center;
+    background-size: contain;
+}
+
+.horizontal {
+    display: flex;
+    width: 900vw;
+    height: 100vh;
+}
+
+.horizontal div {
     width: 100vw;
     height: 100vh;
-    background-color: red;
+}
+
+.sun {
+    background: url(/webp/sun.webp) no-repeat center right;
+    background-size: contain;
+}
+
+.mercury {
+    background: url(/webp/mercury.webp) no-repeat center right;
+    background-size: contain;
+}
+
+.venus {
+    background: url(/webp/venus.webp) no-repeat center right;
+    background-size: contain;
+}
+
+.earth {
+    background: url(/webp/earth.webp) no-repeat center right;
+    background-size: contain;
+}
+
+.mars {
+    background: url(/webp/mars.webp) no-repeat center right;
+    background-size: contain;
+}
+
+.jupiter {
+    background: url(/webp/jupiter.webp) no-repeat center right;
+    background-size: contain;
+}
+
+.saturn {
+    background: url(/webp/saturn.webp) no-repeat center right;
+    background-size: contain;
+}
+
+.uranus {
+    background: url(/webp/uranus.webp) no-repeat center right;
+    background-size: contain;
+}
+
+.neptune {
+    background: url(/webp/neptune.webp) no-repeat center right;
+    background-size: contain;
 }

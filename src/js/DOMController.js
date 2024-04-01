@@ -9,6 +9,12 @@ export class DOMController {
     #firstStageRight = document.querySelector(".s1-r")
     #launcher = document.querySelector(".launcher")
     #scene = document.querySelector(".scene")
+    #rocketEngineAudio = document.querySelector(".rocket__engine__audio")
+    #countdownAudio = document.querySelector(".countdown__audio")
+    #s1Audio = document.querySelector(".s1__audio")
+    #s2Audio = document.querySelector(".s2__audio")
+    #s3Audio = document.querySelector(".s3__audio")
+    #s4Audio = document.querySelector(".s4__audio")
 
     constructor () {
         this.scenePosition = { x: 0, y: 0 }
@@ -26,6 +32,7 @@ export class DOMController {
             elem.style.transform = this.#getRandomSeparateTransform()
             elem.classList.remove("flame")
             if (elem.classList.contains("s1-l")) {
+                this.#s1Audio.play()
                 this.#firstStageRight.style.transitionDuration = "10s"
                 this.#firstStageRight.classList.remove("flame")
                 this.#firstStageRight.style.transform = this.#getRandomSeparateTransform()
@@ -33,16 +40,22 @@ export class DOMController {
                 return
             }
             if (elem.classList.contains("s2")) {
+                this.#s2Audio.play()
                 this.#thirdStage.classList.add("flame")
             }
             if (elem.classList.contains("s3")) {
+                this.#s3Audio.play()
                 this.#head.classList.add("horizontal-head", "flame")
+            }
+            if (elem.classList.contains("s4")) {
+                this.#s4Audio.play()
             }
             this.#flyUp()
         }
     }
 
     launchRocket () {
+        this.#countdownAudio.play()
         const title = this.#launcher.children[1]
         this.#launcher.children[0].classList.add("hidden-button")
         const timer = setInterval(() => {
@@ -54,14 +67,19 @@ export class DOMController {
                     this.#firstStageLeft.classList.add("flame")
                     this.#firstStageRight.classList.add("flame")
                     this.#launcher.style.scale = "0"
+                    this.#rocketEngineAudio.play()
                     setTimeout(() => {
                         this.#flyUp()
-                    }, 200)
-                }, 100)
+                    }, 2000)
+                }, 1000)
                 clearInterval(timer)
                 return
             }
-        }, 100)
+        }, 1000)
+    }
+
+    handleClickOnSpace () {
+        this.#flyToRight()
     }
 
     #flyUp () {
@@ -70,8 +88,9 @@ export class DOMController {
     }
 
     #flyToRight () {
-        this.scenePosition.x += 100
-        this.#scene.style.translate = `${this.scenePosition.x}vw 0`
+        this.scenePosition.x -= 100
+        if (this.scenePosition.x <= -900) return
+        this.#scene.style.translate = `${this.scenePosition.x}vw ${this.scenePosition.y}vh`
     }
 
     #getRandomSeparateTransform () {

@@ -9,6 +9,19 @@
     </head>
     <body>
 
+        <audio src="/audio/sw.mp3" class="sw" loop></audio>
+        <script>
+            const audio = document.querySelector(".sw")
+            audio.play()
+            audio.volume = 0.5
+        </script>
+        <audio src="/audio/rocket-engine.mp3" preload="auto" class="rocket__engine__audio"></audio>
+        <audio src="/audio/countdown.mp3" preload="auto" class="countdown__audio"></audio>
+        <audio src="/audio/s1-separated.mp3" preload="auto" class="s1__audio"></audio>
+        <audio src="/audio/s2-separated.mp3" preload="auto" class="s2__audio"></audio>
+        <audio src="/audio/s3-separated.mp3" preload="auto" class="s3__audio"></audio>
+        <audio src="/audio/s4-separated.mp3" preload="auto" class="s4__audio"></audio>
+
         <div class="rocket">
             <div class="s4"></div>
             <div class="head"></div>
@@ -24,15 +37,27 @@
         </div>
 
         <div class="scene">
-            <div class="black"></div>
-            <div class="black"></div>
-            <div class="red"></div>
-            <div class="blue"></div>
-            <div class="green"></div>
-            <div class="black"></div>
+            <div class="horizontal">
+                <div class="sun"></div>
+                <div class="mercury"></div>
+                <div class="venus"></div>
+                <div class="earth"></div>
+                <div class="mars"></div>
+                <div class="jupiter"></div>
+                <div class="saturn"></div>
+                <div class="uranus"></div>
+                <div class="neptune"></div>
+            </div>
+            <div class="vertical">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
         
-
-        <script src="src/js/main.js" type="module"></script>
+        <script src="/src/js/main.js" type="module"></script>
     </body>
 </html>
