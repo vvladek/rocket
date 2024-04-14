@@ -7,7 +7,12 @@ export default {
         VitePWA({
             registerType: "autoUpdate",
             workbox: {
-                globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,mp3,ogg}']
+                globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,mp3,ogg}'],
+                runtimeCaching: [{
+                    options: {
+                        rangeRequests: true
+                    }
+                }]
             }
         })
     ],
