@@ -10,6 +10,7 @@ export default {
                 globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,mp3,ogg}'],
                 runtimeCaching: [{
                     options: {
+                        handler: 'NetworkFirst',
                         rangeRequests: true
                     }
                 }]
