@@ -9,8 +9,8 @@ export default {
             workbox: {
                 globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,mp3,ogg}'],
                 runtimeCaching: [{
+                    handler: 'NetworkFirst',
                     options: {
-                        handler: 'NetworkFirst',
                         rangeRequests: true
                     }
                 }]
