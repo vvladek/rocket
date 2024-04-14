@@ -1,6 +1,11 @@
 import { AppState } from "./AppState"
 import { DOMController } from "./DOMController"
 
+
+const audio = document.querySelector(".sw")
+audio.volume = 0.5
+
+
 const state = new AppState()
 const DOM = new DOMController()
 
