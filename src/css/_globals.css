@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --rocket-width: 50px;
-    --rocket-height: 350px;
+    --rocket-width: 55px;
+    --rocket-height: 385px;
     --rocket-aspect-ratio: 7;
     --rh: calc(var(--rocket-height) / var(--rocket-aspect-ratio));
     --emergency-stage-height: calc(var(--rh) / 2);
